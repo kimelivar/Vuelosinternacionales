@@ -30,11 +30,7 @@ pipeline {
         }
     }
 
-    post {
-        always {
-                echo "No se realizará la limpieza del workspace."
-            }
-    }
+
 }
 
 
