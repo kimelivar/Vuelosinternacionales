@@ -12,7 +12,6 @@ public class FlightService {
     private String apiKey;
 
     private static final String API_URL = "https://api.aviationstack.com/v1/airlines";
-
     public String getFlightSchedule(String airlineCode) {
         RestTemplate restTemplate = new RestTemplate();
         String url = UriComponentsBuilder.fromHttpUrl(API_URL)
@@ -20,6 +19,9 @@ public class FlightService {
                 .queryParam("airline_code", airlineCode)
                 .toUriString();
         return restTemplate.getForObject(url, String.class);
+    }
+    public void kiara(){
+
     }
 
 
