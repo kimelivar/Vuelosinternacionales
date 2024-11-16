@@ -33,7 +33,7 @@ pipeline {
     post {
         always {
             // Limpieza después de la ejecución
-            cleanWs()
+            cleanWs(cleanWhenFailure: false)  // Intenta eliminar el workspace sin importar el estado de la ejecución
         }
     }
 }
