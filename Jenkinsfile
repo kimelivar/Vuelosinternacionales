@@ -22,8 +22,8 @@ pipeline {
         }
         stage('Ejecutar Aplicación') {
             steps {
-                // Ejecuta el archivo JAR
-                sh 'vuelos-0.0.1-SNAPSHOT.jar'
+                // Busca y ejecuta el archivo JAR generado
+                sh 'java -jar target/vuelos-0.0.1-SNAPSHOT.jar'
             }
         }
     }
