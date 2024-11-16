@@ -22,8 +22,10 @@ pipeline {
         }
         stage('Ejecutar Aplicación') {
             steps {
-                // Busca y ejecuta el archivo JAR generado
-                bat 'java -jar target\\vuelos-0.0.1-SNAPSHOT.jar'
+                // Ejecuta la aplicación en segundo plano
+                bat 'start java -jar target\\vuelos-0.0.1-SNAPSHOT.jar'
+                // Agrega una espera para no dejar que Jenkins se quede esperando indefinidamente
+                sleep(time: 30, unit: 'SECONDS')
             }
         }
     }
@@ -35,4 +37,5 @@ pipeline {
         }
     }
 }
+
 
