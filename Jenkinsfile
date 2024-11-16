@@ -11,19 +11,19 @@ pipeline {
         stage('Instalar Dependencias') {
             steps {
                 // Instala las dependencias usando Maven Wrapper
-                sh './mvnw dependency:resolve'
+                bat '.\\mvnw dependency:resolve'
             }
         }
         stage('Compilar y Construir') {
             steps {
                 // Compila el proyecto y genera el archivo JAR
-                sh './mvnw clean package'
+                bat '.\\mvnw clean package'
             }
         }
         stage('Ejecutar Aplicación') {
             steps {
                 // Busca y ejecuta el archivo JAR generado
-                sh 'java -jar target/vuelos-0.0.1-SNAPSHOT.jar'
+                bat 'java -jar target\\vuelos-0.0.1-SNAPSHOT.jar'
             }
         }
     }
@@ -35,3 +35,4 @@ pipeline {
         }
     }
 }
+
